@@ -1,0 +1,69 @@
+- hosts: Target1
+  tasks:
+
+    - name: Ensure test directory exists
+      ansible.builtin.file:
+        path: /home/michael/test
+        state: directory
+        owner: michael
+        group: michael
+        mode: '0755'
+
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: /root/test-project/details.txt
+        dest: /home/michael/test/details.txt
+        owner: michael
+        group: michael
+        mode: '0644'
+
+    - name: Check that the details.txt exists
+      ansible.builtin.stat:
+        path: /home/michael/test/details.txt
+      register: stat_result
+
+    - name: Debug if file exists
+      debug:
+        msg: "File exists..."
+      when: stat_result.stat.exists
+
+    - name: Debug if file not found
+      debug:
+        msg: "File not found"
+      when: not stat_result.stat.exists
+
+    - name: Display file size
+      debug:
+        var: stat_result.stat.size
+
+    - name: Rename details.txt to info.txt
+      ansible.builtin.command:
+        cmd: mv /home/michael/test/details.txt /home/michael/test/info.txt
+      when: stat_result.stat.exists
+
+    - name: Check permissions and ownership of the info.txt file
+      ansible.builtin.stat:
+        path: /home/michael/test/info.txt
+      register: file_stats
+
+    - name: Get user information
+      ansible.builtin.getent:
+        database: passwd
+        key: michael
+      register: user_info
+
+    - name: Get group information
+      ansible.builtin.getent:
+        database: group
+        key: michael
+      register: group_info
+
+    - name: Debug file ownership and permissions
+      debug:
+        msg:
+          - "Owner: {{ file_stats.stat.uid }} | Expected: michael ({{ user_info.ansible_facts.getent_passwd['michael'][2] if user_info.ansible_facts.getent_passwd['michael'] is defined else 'User not found' }})"
+          - "Group: {{ file_stats.stat.gid }} | Expected: michael ({{ group_info.ansible_facts.getent_group['michael'][2] if group_info.ansible_facts.getent_group['michael'] is defined else 'Group not found' }})"
+          - "Permissions: {{ file_stats.stat.mode }} | Expected: 0644"
+
+
+      
