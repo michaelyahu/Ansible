@@ -45,7 +45,7 @@
 **Snapshots of Automation: Key Steps in the Project**
 -
 
-![Hyper-V]https://raw.githubusercontent.com/michaelyahu/Ansible/refs/heads/main/exercise1/env.png
+![Hyper-V](https://raw.githubusercontent.com/michaelyahu/Ansible/refs/heads/main/exercise1/env.png)
 
 ![result](https://raw.githubusercontent.com/michaelyahu/Ansible/729a1686d7a3c625993f1b70be3392d3e3c909bc/exercise1/Screenshot%202024-10-16%20130341.png)
 
