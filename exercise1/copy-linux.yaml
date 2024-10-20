@@ -17,7 +17,7 @@
         group: michael
         mode: '0644'
 
-    - name: Check that the details.txt exists
+    - name: Check that if details.txt exists
       ansible.builtin.stat:
         path: /home/michael/test/details.txt
       register: stat_result
