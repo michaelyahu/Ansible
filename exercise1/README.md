@@ -3,7 +3,13 @@
 
 **Description**
 -
-    In this exercise, I implemented file management automation using Ansible, a popular configuration management tool, on a Hyper-V environment with virtual machines running CentOS. The entire process was executed via SSH connections through Visual Studio (VS) between the machines. The goal was to transfer files from one server to another, ensure that the files were successfully transferred, and perform checks on the settings, permissions, and ownership of the files.
+    In this exercise, I implemented file management automation using Ansible,
+    a popular configuration management tool,
+    on a Hyper-V environment with virtual machines running CentOS.
+    The entire process was executed via SSH connections through Visual Studio (VS) between the machines.
+    The goal was to transfer files from one server to another,
+    ensure that the files were successfully transferred,
+    and perform checks on the settings, permissions, and ownership of the files.
 
 **Content**
 
@@ -27,11 +33,14 @@
 
     During the project, I encountered several issues that I had to resolve to make the automation work.
 
-    Security - I had to create a security certificate for the Controller server and implement it on the Target1 server to perform the operation without the need for authentication.
+    Security - I had to create a security certificate for the Controller server and implement it on the Target1 server 
+    to perform the operation without the need for authentication.
 
-    Permissions - I dealt with permission issues when transferring files, for example, when the user did not have sufficient permissions to copy files to a specific directory.
+    Permissions - I dealt with permission issues when transferring files, for example, 
+    when the user did not have sufficient permissions to copy files to a specific directory.
 
-    DEBUG - During the work, I was unsure where the process was halting, so I had to add DEBUG statements for each action to understand where each action was stopping and, if it did stop, what was preventing it from continuing.
+    DEBUG - During the work, I was unsure where the process was halting, so I had to add DEBUG statements
+    for each action to understand where each action was stopping and, if it did stop, what was preventing it from continuing.
 
 **Snapshots of Automation: Key Steps in the Project**
 -
