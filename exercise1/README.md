@@ -42,7 +42,7 @@
     DEBUG - During the work, I was unsure where the process was halting, so I had to add DEBUG statements
     for each action to understand where each action was stopping and, if it did stop, what was preventing it from continuing.
 
-**Snapshots of Automation: Key Steps in the Project**
+**Snapshots of Automation: Key Steps in the Project** 
 -
 
 ![Hyper-V](https://raw.githubusercontent.com/michaelyahu/Ansible/refs/heads/main/exercise1/env.png)
