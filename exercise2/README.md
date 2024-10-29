@@ -62,10 +62,11 @@ This project is designed to set static IP addresses for virtual machines running
 Good luck!
 
 
-![env]([URL_TO_IMAGE](https://github.com/michaelyahu/Ansible/blob/main/exercise2/env.png?raw=true))
-![Target1]([URL_TO_IMAGE](https://github.com/michaelyahu/Ansible/blob/main/exercise2/target1-dhcp.png?raw=true))
-![Target2]([URL_TO_IMAGE](https://github.com/michaelyahu/Ansible/blob/main/exercise2/target2-dhcp.png?raw=true))
-![Result]([URL_TO_IMAGE](https://github.com/michaelyahu/Ansible/blob/main/exercise2/change_IP.png?raw=true))
+![env](https://github.com/michaelyahu/Ansible/raw/main/exercise2/env.png)
+![Target1](https://github.com/michaelyahu/Ansible/raw/main/exercise2/target1-dhcp.png)
+![Target2](https://github.com/michaelyahu/Ansible/raw/main/exercise2/target2-dhcp.png)
+![Result](https://github.com/michaelyahu/Ansible/raw/main/exercise2/change_IP.png)
+
 
 
 
