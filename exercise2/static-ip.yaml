@@ -1,0 +1,25 @@
+---
+- name: Configure static IP addresses
+  hosts: all
+  become: true
+
+  vars_files:
+    - /root/Ansible/exercise2/ip_allocation.yaml
+
+  tasks:
+    - name: Set static IP address for each host
+      nmcli:
+        conn_name: eth0
+        ifname: eth0
+        state: present
+        autoconnect: yes
+        type: ethernet
+        method4: manual
+        ip4: "{{ static_ips[inventory_hostname].ip }}/24"
+        gw4: "{{ static_ips[inventory_hostname].gateway }}"
+      when: static_ips[inventory_hostname] is defined
+
+    - name: Restart NetworkManager to apply changes
+      service:
+        name: NetworkManager
+        state: restarted

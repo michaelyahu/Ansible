@@ -1,0 +1,7 @@
+static_ips:
+  Target1:
+    ip: 192.168.1.111
+    gateway: 192.168.1.1
+  Target2:
+    ip: 192.168.1.222
+    gateway: 192.168.1.1
